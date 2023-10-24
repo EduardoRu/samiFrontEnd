@@ -1,0 +1,7 @@
+{
+  "name": "samiFrontEnd",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
