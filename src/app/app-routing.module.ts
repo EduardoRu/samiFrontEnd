@@ -12,6 +12,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'detallestemperatura',
+    loadChildren: () => import('./pages/detallestemperatura/detallestemperatura.module').then( m => m.DetallestemperaturaPageModule)
+  },
+  {
     path: 'pages/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
