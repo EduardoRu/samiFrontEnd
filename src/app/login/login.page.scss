@@ -1,0 +1,51 @@
+.login-content {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .center-content {
+    text-align: center;
+  }
+  
+  .invernadero-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  
+  .login-form {
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .input-field {
+    align-items: center;
+    justify-content: center;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .login-button {
+    background-color: #00cc99;
+  }
+  
+  .invernadero-description {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin: 20px 0;
+  }
+  
