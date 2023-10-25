@@ -10,45 +10,83 @@
       <ion-title size="large">Mi Perfil</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-card>
-    <ion-thumbnail>
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-    </ion-thumbnail>
-    <label for="">Nombre: </label>
-  </ion-card><br><br>
+  <ion-content style="background-color: rgb(173, 171, 171);">
+    <br><br><br>
+    <ion-button color="success"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> 
+    <ion-grid [fixed]="true">
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col> <ion-thumbnail > 
+         
+          <img style="text-align: center" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+      </ion-thumbnail> 
+       </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid [fixed]="true">
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+        <label for="" style="justify-content: center;">Sara Laura Gonzalez Badillos</label></ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  
+  <br><br>
+  <label for="">Notificaciones</label>
   <ion-card>
-    <label for="">Notificaciones</label>
+   <br>
     <ion-toggle [enableOnOffLabels]="true">Activar Notificaciones</ion-toggle>
+    <br><br>
   </ion-card>
     <br><br>
+    
+    <label for="">Mis horarios</label>
     <ion-card>
 
-      <label for="">Mis horarios</label>
       <ion-accordion-group>
   <ion-accordion value="first">
     <ion-item slot="header" color="light">
-      <ion-label>First Accordion</ion-label>
+      <ion-label>Lunes</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">First Content</div>
   </ion-accordion>
   <ion-accordion value="second">
     <ion-item slot="header" color="light">
-      <ion-label>Second Accordion</ion-label>
+      <ion-label>Martes</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">Second Content</div>
   </ion-accordion>
   <ion-accordion value="third">
     <ion-item slot="header" color="light">
-      <ion-label>Third Accordion</ion-label>
+      <ion-label>Miércoles</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">Third Content</div>
   </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Jueves</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Third Content</div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Viernes</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Third Content</div>
+  </ion-accordion>
+ 
 </ion-accordion-group>
     </ion-card>
   
   </ion-content>
-    
+  <br><br>
+ <div class="center"><ion-button  shape="round" color="success">Cerrar sesión</ion-button></div>
+  
+  <br><br>
+
       
   
 </ion-content>
