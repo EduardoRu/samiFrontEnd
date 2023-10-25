@@ -1,0 +1,55 @@
+.login-content {
+  --background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.center-content {
+  text-align: center;
+}
+
+.invernadero-image {
+  display: block;
+  width: 80%;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.login-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px; 
+  text-align: center;
+  margin: 20px auto;
+}
+
+.input-field {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.login-button {
+  --background: #00cc99;
+  width: 100%;
+}
+.input-field ion-input {
+  text-align: center;
+}
+.input-field ion-input::part(placeholder) {
+  text-align: center;
+}
+.input-field ion-input::part(placeholder),
+.input-field ion-label {
+  text-align: center;
+}
+.invernadero-description {
+  text-align: center;
+  font-size: 16px;
+  color: #000000;
+  margin: 20px 0;
+}

@@ -1,9 +1,126 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <h1 style="font-size: 40px;">Bienvenido <br> usuario</h1>
+      </ion-col>
+      <ion-col size="4">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6" style="padding-top: 22%;">
+              <ion-buttons>
+                <ion-icon name="search" style="font-size: 30px;"></ion-icon>
+              </ion-buttons>
+            </ion-col>
+            <ion-col size="6">
+              <ion-avatar class="ion-padding">
+                <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+              </ion-avatar>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-searchbar placeholder="Buscar categoria" [debounce]="250"></ion-searchbar>
+
+  <div style="text-align: center;">
+    <h1>Sección de plantas 1</h1>
+  </div>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" shape="round">
+          Anterior
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" shape="round">
+          Siguiente
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+    <ion-card-content>
+      <div>
+        <h1>Temperatura ambiental</h1>
+      </div>
+      <ion-progress-bar value="0.42" color="primary"></ion-progress-bar>
+      <br>
+      <div>
+        <h1>Humedad ambiental</h1>
+      </div>
+      <ion-progress-bar value="0.42" color="primary"></ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+  <div style="padding-left: 3%;">
+    <h1>Categorias</h1>
+  </div>
+  <div>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content>
+              <div>
+                <ion-icon name="egg" color="light"
+                  style="font-size: 26px;border: 1px solid #1e90ff; border-radius: 10%; background-color: #1e90ff;"></ion-icon>
+                <p># registros</p>
+                <h4><b>Humedad</b></h4>
+                <div>
+                  <ion-progress-bar  value="0.42" color="primary"></ion-progress-bar>
+                </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content>
+              <ion-icon name="thermometer" color="light"
+                style="font-size: 26px;border: 1px solid #FF3B30; border-radius: 10%; background-color: #FF3B30;"></ion-icon>
+              <p># registros</p>
+              <h4><b>Temperatura</b></h4>
+              <div>
+                <ion-progress-bar  value="0.42" color="primary"></ion-progress-bar>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content>
+              <ion-icon name="sunny" color="light"
+                style="font-size: 26px;border: 1px solid #FFAB1E; border-radius: 10%; background-color: #FFAB1E;"></ion-icon>
+              <p># registros</p>
+              <h4><b>Luminosidad</b></h4>
+              <div>
+                <ion-progress-bar  value="0.42" color="primary"></ion-progress-bar>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-content>
+              <ion-icon name="rainy" color="light"
+                style="font-size: 26px;border: 1px solid #5AC8FA; border-radius: 10%; background-color: #5AC8FA;"></ion-icon>
+              <p># registros</p>
+              <h4><b>Presipitación</b></h4>
+              <div>
+                <ion-progress-bar  value="0.42" color="primary"></ion-progress-bar>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
