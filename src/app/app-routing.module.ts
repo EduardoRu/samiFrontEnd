@@ -8,22 +8,25 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'detallestemperatura',
+    loadChildren: () => import('./pages/detallestemperatura/detallestemperatura.module').then( m => m.DetallestemperaturaPageModule)
   },
   {
     path: 'pages/home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
-
+  {
+    path: 'login',
+    loadChildren: () => import ('./login/login.module').then( m => m.LoginPageModule)
+  }
 ];
 
 @NgModule({
