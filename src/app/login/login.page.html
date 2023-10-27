@@ -5,16 +5,16 @@
     <p class="invernadero-description">El control y monitoreo de tu invernadero</p>
   </div>
 
-  <form class="login-form">
+  <form class="login-form" (ngSubmit)="login()" [formGroup]="userCredentials">
     <ion-item class="input-field">
-      <ion-input label="Nombre de usuario" labelPlacement="floating" labelPo type="text" name="username" required></ion-input>
+      <ion-input label="Nombre de usuario" labelPlacement="floating" labelPo type="email" name="username" formControlName="email" required></ion-input>
     </ion-item>
 
     <ion-item class="input-field">
-      <ion-input label="Contraseña" labelPlacement="floating" type="password" name="password" required></ion-input>
+      <ion-input label="Contraseña" labelPlacement="floating" type="password" name="password" formControlName="password" required></ion-input>
     </ion-item>
 
-    <ion-button type="submit" class="login-button">Iniciar sesión</ion-button>
+    <ion-button type="submit" class="login-button" expand="block" [disabled]="!userCredentials.valid">Iniciar sesión</ion-button>
   </form>
 
   <p class="invernadero-description">Sistema de Monitoreo y Control del Invernadero</p>

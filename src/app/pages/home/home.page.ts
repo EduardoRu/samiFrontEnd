@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -25,9 +26,17 @@ export class HomePage implements OnInit {
 
   plantasFiltradas: string[] = [];
 
-  constructor() { }
+  
+
+  constructor(
+    private routes:Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  async viewProfile(){
+    await this.routes.navigateByUrl('/perfil', {replaceUrl: true})
   }
 
   buscarCategoria(event: any) {
