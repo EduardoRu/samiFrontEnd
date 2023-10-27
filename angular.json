@@ -31,7 +31,10 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -111,7 +114,10 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -129,6 +135,13 @@
               "src/**/*.html"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "app:build:production"
+          }
         }
       }
     }
@@ -137,11 +150,7 @@
     "schematicCollections": [
       "@ionic/angular-toolkit"
     ],
-<<<<<<< Updated upstream
-    "analytics": false
-=======
     "analytics": "72db8b9c-cc2d-4433-941d-557a8544f304"
->>>>>>> Stashed changes
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {
