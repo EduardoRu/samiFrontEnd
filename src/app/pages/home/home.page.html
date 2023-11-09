@@ -128,17 +128,19 @@
               <ion-card>
                  <ion-card-content>
                     <div>
-                       <ion-icon name="egg" color="light" style="font-size: 26px;border: 1px solid #1e90ff; border-radius: 10%; background-color: #1e90ff;"></ion-icon>
+                       <ion-icon name="water-outline" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #1e90ff; border-radius: 10%; background-color: #1e90ff;"></ion-icon>
                     </div>
                  </ion-card-content>
               </ion-card>
            </ion-col>
            <ion-col size="6">
-              <ion-card>
-                 <ion-card-content>
-                    <ion-icon name="thermometer" color="light" style="font-size: 26px;border: 1px solid #FF3B30; border-radius: 10%; background-color: #FF3B30;"></ion-icon>
-                 </ion-card-content>
-              </ion-card>
+            <ion-card (click)="irARuta()" class="custom-card">
+               <ion-card-content class="custom-content">
+                 <ion-icon name="thermometer" class="custom-icon" color="light"></ion-icon>
+                 <ion-card-title class="custom-title">Temperatura</ion-card-title>
+               </ion-card-content>
+             </ion-card>
+             
            </ion-col>
         </ion-row>
      </ion-grid>
@@ -147,14 +149,14 @@
            <ion-col size="6">
               <ion-card>
                  <ion-card-content>
-                    <ion-icon name="sunny" color="light" style="font-size: 26px;border: 1px solid #FFAB1E; border-radius: 10%; background-color: #FFAB1E;"></ion-icon>
+                    <ion-icon name="sunny" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #FFAB1E; border-radius: 10%; background-color: #FFAB1E;"></ion-icon>
                  </ion-card-content>
               </ion-card>
            </ion-col>
            <ion-col size="6">
               <ion-card>
                  <ion-card-content>
-                    <ion-icon name="rainy" color="light" style="font-size: 26px;border: 1px solid #5AC8FA; border-radius: 10%; background-color: #5AC8FA;"></ion-icon>
+                    <ion-icon name="rainy" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #5AC8FA; border-radius: 10%; background-color: #5AC8FA;"></ion-icon>
                  </ion-card-content>
               </ion-card>
            </ion-col>
