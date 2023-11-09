@@ -19,4 +19,27 @@ ion-modal {
     justify-content: center;
     align-items: center;
   }
+  .custom-card {
+    text-align: center; /* Centra el contenido */
+  }
+  
+  .custom-content {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .custom-icon {
+    font-size: 26px;
+    border: 1px solid #FF3B30;
+    border-radius: 10%;
+    background-color: #FF3B30;
+    color: light;
+    margin-bottom: 5px; /* Espacio entre el icono y el título */
+  }
+  
+  .custom-title {
+    font-size: 16px; /* Ajusta el tamaño del título según tus preferencias */
+  }
+  
   

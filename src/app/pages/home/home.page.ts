@@ -14,10 +14,12 @@ export class HomePage implements OnInit {
   registros: any[] = [];
 
   constructor(private router: Router, private firebaseService: FirebaseService) { }
-
+  irARuta() {
+    this.router.navigateByUrl('/detallestemperatura');
+  }
   ngOnInit() {
     this.firebaseService.getTemperatura()
-      .pipe(distinct()) // Utiliza el operador distinct para filtrar datos duplicados
+      .pipe(distinct())
       .subscribe((data: any) => {
         this.temperaturaAmbiental = data.temperatura;
         this.humedadAmbiental = data.humedad;

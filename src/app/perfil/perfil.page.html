@@ -1,5 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/home']" color="success">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
     <ion-title>Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,9 +18,7 @@
   </ion-header>
 
   <ion-content style="background-color: rgb(173, 171, 171);">
-    <ion-button color="success" [routerLink]="['/home']">
-      <ion-icon name="chevron-back-outline"></ion-icon>
-    </ion-button>
+    
     
 
     <ion-grid [fixed]="true">
