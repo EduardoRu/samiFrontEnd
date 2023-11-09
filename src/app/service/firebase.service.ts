@@ -25,7 +25,11 @@ export class FirebaseService {
     private auth:Auth,
     private firestore:Firestore,
   ) { }
-
+  //OBTENER REGISTROS DE LOS JITOMATES
+    getTemperatura(): Observable<any>{
+    const queryRef = collection(this.firestore, 'Jitomates');
+    return collectionData(queryRef, {idField: 'id'}) as Observable<any>
+  }
   // Funciones de ejemplo
   /*
   OBTENER REGISTROS
