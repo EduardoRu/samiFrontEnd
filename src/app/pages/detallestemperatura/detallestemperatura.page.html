@@ -3,7 +3,7 @@
     <ion-title>Temperatura</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-content [fullscreen]="true">
 <ion-card>
   <ion-card-header>
     <ion-card-title>Dias</ion-card-title>
@@ -57,6 +57,38 @@
   </ion-card-content>
 </ion-card>
 
-<ion-content [fullscreen]="true">
+<ion-list>
+  <ion-item>
+    <ion-icon name="flower-outline"></ion-icon>
+    <ion-toggle>Activar ventilador</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="rainy"></ion-icon>
+    <ion-toggle>Activar aspersores</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="archive-outline"></ion-icon>
+    <ion-toggle>Activar cortina</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="camera-outline"></ion-icon>
+    <ion-toggle>Ver camara termica</ion-toggle>
+  </ion-item>
+  
+</ion-list>
+
+<ion-card class="center-card">
+  <ion-card-header>
+    <ion-card-title>Camara termica</ion-card-title>
+  </ion-card-header>
+  <img alt="Silhouette of mountains" src="assets/camara.jpeg" class="center-image" />
+</ion-card>
+
+
+
+
+  
   
 </ion-content>
+
+
