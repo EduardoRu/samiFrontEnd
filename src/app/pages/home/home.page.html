@@ -14,22 +14,52 @@
 
   <!--- Seccion del estado general del invernadero -->
   <ion-card>
-     <ion-card-header>
-        <ion-card-title>Estado del Invernadero <ion-icon name="checkmark-circle" color="success"></ion-icon></ion-card-title>
-     </ion-card-header>
-     <ion-card-content>
-      <div *ngFor="let registro of registros">
-        <div class="info-item">
-          <h2>Temperatura Ambiental</h2>
-          <ion-progress-bar [value]="registro.temp_ambiental" color="primary"></ion-progress-bar>
-        </div>
-        <div class="info-item">
-          <h2>Humedad Ambiental</h2>
-          <ion-progress-bar [value]="registro.hum_ambiental" color="primary"></ion-progress-bar>
-        </div>
-      </div>
-     </ion-card-content>
-  </ion-card>
+   <ion-card-header>
+     <ion-card-title>Estado del Invernadero <ion-icon name="checkmark-circle" color="success"></ion-icon></ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+     <!-- Temperatura Ambiental -->
+     <div class="info-item">
+       <h2>Temperatura Ambiental</h2>
+       <div class="promedio-container">
+         <ion-progress-bar [value]="promedioTemperatura" color="primary"></ion-progress-bar>
+         <span class="promedio">{{ (promedioTemperatura * 100).toFixed(0) }}</span><span class="unidad promedio">°C</span>
+       </div>
+     </div>
+ 
+     <!-- Humedad Ambiental -->
+     <div class="info-item">
+       <h2>Humedad Ambiental</h2>
+       <div class="promedio-container">
+         <ion-progress-bar [value]="promedioHumedad" color="primary"></ion-progress-bar>
+         <span class="promedio">{{ (promedioHumedad * 100).toFixed(2) }}</span><span class="unidad promedio">%</span>
+       </div>
+     </div>
+ 
+     <!-- Luminosidad -->
+     <div class="info-item">
+       <h2>Luminosidad</h2>
+       <div class="promedio-container">
+         <!-- Reemplaza "promedioLuminosidad" con la variable correspondiente -->
+         <ion-progress-bar [value]="promedioLuminosidad" color="primary"></ion-progress-bar>
+         <!-- Multiplica por 100 si el valor está en formato decimal -->
+         <span class="promedio">{{ (promedioLuminosidad * 100).toFixed(2) }}</span><span class="unidad promedio">lx</span>
+       </div>
+     </div>
+ 
+     <!-- Precipitación -->
+     <div class="info-item">
+       <h2>Precipitación</h2>
+       <div class="promedio-container">
+         <!-- Reemplaza "promedioPrecipitacion" con la variable correspondiente -->
+         <ion-progress-bar [value]="promedioPrecipitacion" color="primary"></ion-progress-bar>
+         <!-- Multiplica por 100 si el valor está en formato decimal -->
+         <span class="promedio">{{ (promedioPrecipitacion * 100).toFixed(2) }}</span><span class="unidad promedio">mm</span>
+       </div>
+     </div>
+   </ion-card-content>
+ </ion-card>
+ 
 
 
   <!--- Boton de buscar seccion de plantas -->
@@ -39,82 +69,52 @@
         <ion-icon name="search" style="font-size: 30px;"></ion-icon>
      </ion-button>
   </div>
-  <!--- Modal -->
-  <ion-modal #modal trigger="open-modal">
-     <ng-template>
-        <ion-content>
-           <ion-toolbar>
-              <ion-title>Busca tu sección</ion-title>
-              <ion-buttons slot="end">
-                 <ion-button color="light" (click)="modal.dismiss()">Cerrar</ion-button>
-              </ion-buttons>
-           </ion-toolbar>
-           <ion-list>
-              <ion-item>
-                 <ion-item button="true" detail="false" (click)="modal.dismiss()">
-                    <ion-icon name="person-circle"></ion-icon>
-                    <ion-label>Item 1</ion-label>
-                 </ion-item>
-              </ion-item>
-              <ion-item>
-                 <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
-                 </ion-avatar>
-                 <ion-label>
-                    <h2>Sección de plantas 2</h2>
-                    <p>Product Designer</p>
-                 </ion-label>
-              </ion-item>
-              <ion-item>
-                 <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
-                 </ion-avatar>
-                 <ion-label>
-                    <h2>Sección de plantas 3</h2>
-                    <p>Director of Operations</p>
-                 </ion-label>
-              </ion-item>
-              <ion-item>
-                 <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
-                 </ion-avatar>
-                 <ion-label>
-                    <h2>Sección de plantas 4</h2>
-                    <p>CEO</p>
-                 </ion-label>
-              </ion-item>
-              <ion-item>
-                 <ion-avatar slot="start">
-                    <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
-                 </ion-avatar>
-                 <ion-label>
-                    <h2>Sección de plantas 5</h2>
-                    <p>CEO</p>
-                 </ion-label>
-              </ion-item>
-           </ion-list>
-        </ion-content>
-     </ng-template>
-  </ion-modal>
+  <!-- Modal -->
+<ion-modal #modal trigger="open-modal" color="success">
+   <ng-template>
+     <ion-content>
+       <ion-toolbar>
+         <ion-title>Busca tu sección</ion-title>
+         <ion-buttons slot="end">
+           <ion-button color="light" (click)="modal.dismiss()">Cerrar</ion-button>
+         </ion-buttons>
+       </ion-toolbar>
+       <ion-list>
+         <!-- Contenido estático del modal con nombres de verduras para invernadero -->
+         <ion-item>
+           <ion-avatar slot="start">
+             <ion-img src="https://png.pngtree.com/png-clipart/20230920/original/pngtree-tomato-icon-logo-design-vector-illustration-pattern-cute-illustration-vector-png-image_12453238.png"></ion-img>
+           </ion-avatar>
+           <ion-label>
+             <h2>Jitomate</h2>
+           </ion-label>
+         </ion-item>
+         <ion-item>
+           <ion-avatar slot="start">
+             <ion-img src="https://png.pngtree.com/png-clipart/20201208/original/pngtree-line-drawing-carrot-clipart-png-image_5569791.jpg"></ion-img>
+           </ion-avatar>
+           <ion-label>
+             <h2>Zanahoria</h2>
+           </ion-label>
+         </ion-item>
+         <ion-item>
+           <ion-avatar slot="start">
+             <ion-img src="https://png.pngtree.com/png-clipart/20190925/original/pngtree-broccoli-png-image_4983791.jpg"></ion-img>
+           </ion-avatar>
+           <ion-label>
+             <h2>Brócoli</h2>
+           </ion-label>
+         </ion-item>
+         <!-- Puedes agregar más items según sea necesario -->
+       </ion-list>
+     </ion-content>
+   </ng-template>
+ </ion-modal>
+ 
   <!--- Seccion de plantas -->
   <div style="text-align: center;">
-     <h1>Sección de plantas 1</h1>
+     <h1>Sección de Jitomates</h1>
   </div>
-  <!--- Paginacion de resultados -->
-  <ion-grid fixed>
-     <ion-row>
-        <ion-col size="6">
-           <ion-button expand="block" shape="round" style="color: aliceblue;" color="success">
-              Anterior
-           </ion-button>
-        </ion-col>
-        <ion-col size="6">
-           <ion-button expand="block" shape="round" style="color: aliceblue;" color="success">
-              Siguiente
-           </ion-button>
-        </ion-col>
-     </ion-row>
-  </ion-grid>
   <ion-card>
      <!--- Seccion de categorias en base al estado del invernadero -->
   </ion-card>
@@ -125,20 +125,20 @@
      <ion-grid fixed>
         <ion-row>
            <ion-col size="6">
-              <ion-card>
-                 <ion-card-content>
-                    <div>
-                       <ion-icon name="water-outline" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #1e90ff; border-radius: 10%; background-color: #1e90ff;"></ion-icon>
-                    </div>
-                 </ion-card-content>
-              </ion-card>
+            <ion-card (click)="irARuta()" class="custom-card">
+               <ion-card-content class="custom-content">
+                 <ion-icon name="water-outline" class="custom-icon" color="primary"></ion-icon>
+                 <ion-card-title class="custom-title">Humedad</ion-card-title>
+                 <h5>{{ registros.length }} registros</h5>
+               </ion-card-content>
+             </ion-card>
            </ion-col>
            <ion-col size="6">
             <ion-card (click)="irARuta()" class="custom-card">
                <ion-card-content class="custom-content">
-                 <ion-icon name="thermometer" class="custom-icon" color="light"></ion-icon>
+                 <ion-icon name="thermometer" class="custom-icon" color="danger"></ion-icon>
                  <ion-card-title class="custom-title">Temperatura</ion-card-title>
-                 <h5>{{ registros.length }} registro</h5>
+                 <h5>{{ registros.length }} registros</h5>
                </ion-card-content>
              </ion-card>
              
@@ -149,18 +149,22 @@
      <ion-grid fixed>
         <ion-row>
            <ion-col size="6">
-              <ion-card>
-                 <ion-card-content>
-                    <ion-icon name="sunny" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #FFAB1E; border-radius: 10%; background-color: #FFAB1E;"></ion-icon>
-                 </ion-card-content>
-              </ion-card>
+            <ion-card (click)="irARuta()" class="custom-card">
+               <ion-card-content class="custom-content">
+                 <ion-icon name="sunny" class="custom-icon" color="warning"></ion-icon>
+                 <ion-card-title class="custom-title">Luminosidad</ion-card-title>
+                 <h5>{{ registros.length }} registros</h5>
+               </ion-card-content>
+             </ion-card>
            </ion-col>
            <ion-col size="6">
-              <ion-card>
-                 <ion-card-content>
-                    <ion-icon name="rainy" class="custom-icon" color="light" style="font-size: 26px;border: 1px solid #5AC8FA; border-radius: 10%; background-color: #5AC8FA;"></ion-icon>
-                 </ion-card-content>
-              </ion-card>
+            <ion-card (click)="irARuta()" class="custom-card">
+               <ion-card-content class="custom-content">
+                 <ion-icon name="rainy" class="custom-icon" color="secondary"></ion-icon>
+                 <ion-card-title class="custom-title">Precipitacion</ion-card-title>
+                 <h5>{{ registros.length }} registros</h5>
+               </ion-card-content>
+             </ion-card>
            </ion-col>
         </ion-row>
      </ion-grid>

@@ -30,6 +30,11 @@ export class FirebaseService {
     const queryRef = collection(this.firestore, 'Jitomates');
     return collectionData(queryRef, {idField: 'id'}) as Observable<any>
   }
+   //OBTENER REGISTROS DE LOS JITOMATES
+   getZanahorias(): Observable<any>{
+    const queryRef = collection(this.firestore, 'Zanahorias');
+    return collectionData(queryRef, {idField: 'id'}) as Observable<any>
+  }
   // Funciones de ejemplo
   /*
   OBTENER REGISTROS
